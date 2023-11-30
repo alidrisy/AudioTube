@@ -18,8 +18,7 @@ def search(query, max_result):
         video_list.extend(yt.result()['result'])
     for i in range(len(video_list)):
         video_list[i]['cname'] = video_list[i]['channel']['name']
-        video_list[i]['cimg'] = video_list[i]['channel']['thumb\
-                nails'][-1]['url']
+        video_list[i]['cimg'] = video_list[i]['channel']['thumbnails'][-1]['url']
         del video_list[i]['channel']
         video_list[i]['img'] = video_list[i]['thumbnails'][-1]['url']
         del video_list[i]['thumbnails']

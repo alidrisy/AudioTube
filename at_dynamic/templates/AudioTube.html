@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="../static/images/icon.png">
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="../static/styles/header.css">
+		<link rel="stylesheet" type="text/css" href="../static/styles/common.css">
+		<link rel="stylesheet" type="text/css" href="../static/styles/filter.css">
+		<link rel="stylesheet" type="text/css" href="../static/styles/videos.css">
+		<title>AudioTube</title>
+	</head>
+	<body>
+		<header id="header">
+		</header>
+		<div class="container">
+			<section class="filter">
+				<div class="tags">
+					<ul>
+						<li class="def" data="{{ videos }}"><h4>All</h4></li>
+						<li id="10"><h4>Music</h4></li>
+						<li id="24"><h4>Podcasts</h4></li>
+						<li id="27"><h4>E-books</h4></li>
+					</ul>
+				</div>
+				<div class="exit"></div>
+				<form class="search" id="searchInput">
+					<input type="text" name="search" placeholder="Search AudioTube" class="input" value="" required>
+					<button type="submit" class="icon-button" ></button>
+				</form>
+				<img src="../static/images/search.png" class="ser" id="searchBtn" />
+			</section>
+			<section class="load">
+				<img src="../static/images/Rolling.gif" height=80/>
+			</section>
+			<section class="videos">
+			</section>
+		</div>
+		<script src="../static/js/audioT.js"></script>
+	</body>
+</html>

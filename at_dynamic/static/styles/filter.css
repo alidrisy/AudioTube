@@ -1,0 +1,102 @@
+/* Style of filter and search section */
+
+.filter {
+	height: 80px;
+	position: relative;
+	display: flex;
+}
+
+.filter .tags ul {
+	width: 270px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.filter .tags li {
+	margin: 0 5px; 
+	text-align: center;
+	border: 1px solid #CCCCCC;
+	border-radius: 20px;
+}
+
+.filter .tags .def {
+	background-color: #d4d4d4;
+}
+
+.filter .tags h4 {
+	line-height: 2px;
+	width: 70px;
+}
+
+.filter .ser {
+	height: 38px;
+	border: 5px solid #e5e5e5;
+	position: absolute;
+	right: 14px;
+	outline: none;
+}
+
+.filter .ser:hover {
+	background-color: #d4d4d4;
+	border: 5px solid #d4d4d4;
+	border-radius: 50%;
+	outline: none;
+}
+
+.filter .search .icon-button {
+	border: none;
+	width: 50px;
+	height: 40px;
+	cursor: pointer;
+	background-color: #d4d4d4;
+	background-image: url('../images/search.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 70%;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	outline: none;
+}
+
+.filter .search .icon-button:hover {
+	background-color: #d1d5db;
+}
+  
+.filter .search {
+	display: none;
+	position: absolute;
+	right: 5px;
+	box-sizing: border-box;
+}
+
+.filter .search .input {
+	height: 40px;
+	min-width: 300px;
+	max-width: 700px;
+	padding-left: 10px;
+  	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background: #e5e5e5;
+	outline: none;
+	border: 1px solid #d4d4d4;
+	color: #484848;
+}
+
+.filter div.exit {
+	width: 30px;
+	height: 40px;
+	cursor: pointer;
+	background-image: url('../images/arrow.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 40%;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	outline: none;
+	margin-right: 20px;
+	display: none;
+}
