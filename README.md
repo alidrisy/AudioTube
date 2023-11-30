@@ -1,5 +1,5 @@
 # AudioTube
-* This application was created as a minimum viable product (MVP) for a portfolio project as part of the ALX Information Technology Engineering Program.
+* This application was created as a minimum viable product (MVP) for a portfolio project as part of the ALX Software Engineering Program.
 
 
 ## About
