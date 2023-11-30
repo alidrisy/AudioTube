@@ -39,7 +39,7 @@ def download_audio():
 @app.route('/', strict_slashes=False)
 def audioTube():
     """ Rendering the main app page """
-    video_list = search('اغنية | اغاني | songe | songes')
+    video_list = search('اغنية | اغاني | music | song')
     video_list.extend(search('بودكاست | podcast'))
     video_list.extend(search('كتاب| كتب | book | books'))
     for i in range(len(video_list)):
@@ -49,7 +49,7 @@ def audioTube():
         video_list[i]['img'] = video_list[i]['thumbnails'][-1]['url']
         del video_list[i]['thumbnails']
         video_list[i]['views'] = video_list[i]['viewCount']['short']
-    video_list.sort(key=lambda k: k['views'])
+#    video_list.sort(key=lambda k: k['views'])
     video_list = json.dumps(video_list)
     return render_template("AudioTube.html", videos=video_list)
 
