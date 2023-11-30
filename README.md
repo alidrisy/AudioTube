@@ -34,6 +34,7 @@ python3 -m api.v1.app
 ```
 python3 -m at_dynamic.app
 ```
+* Run `http://127.0.0.1:5000/` in your browser.
 
 ## Bugs
 No known bugs at this time.
