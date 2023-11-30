@@ -31,9 +31,9 @@ def search(query, max_result):
                  strict_slashes=False)
 def catagories(catagory_id=None):
     """ Get content from youtube """
-    podcast = 'بودكاست'
-    books = 'كتاب مقروء | كتب مقروة | كتب مسموعة ذ| كتاب | كتب'
-    songs = "أغنية | أغاني"
+    podcast = 'بودكاست | podcast'
+    books = 'كتاب مقروء | كتب مقروة | كتب مسموعة ذ| كتاب | كتب | book | books'
+    songs = "أغنية | أغاني | songe | songes"
     if catagory_id == 10:
         vidList = search(songs, 50)
     elif catagory_id == 27:

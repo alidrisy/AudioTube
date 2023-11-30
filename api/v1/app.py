@@ -17,4 +17,4 @@ def not_found(error):
 
 
 if __name__ == "__main__":
-    app.run(host=getenv('AY_HOST', '0.0.0.0'), port=getenv('AY_PORT', 5000))
+    app.run(host=getenv('AY_HOST', '0.0.0.0'), port=getenv('AY_PORT', 5001))
