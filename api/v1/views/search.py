@@ -8,8 +8,14 @@ import json
 
 def search(query, max_result):
     """ Search youtube videos """
-    yt = VideosSearch(query, max_result)
+    yt = VideosSearch(query, 40)
     video_list = yt.result()['result']
+    if len(video_list) < max_result:
+        yt.next()
+        video_list.extend(yt.result()['result'])
+    if len(video_list) < max_result:
+        yt.next()
+        video_list.extend(yt.result()['result'])
     for i in range(len(video_list)):
         video_list[i]['cname'] = video_list[i]['channel']['name']
         video_list[i]['cimg'] = video_list[i]['channel']['thumb\

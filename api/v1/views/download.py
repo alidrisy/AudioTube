@@ -14,8 +14,8 @@ def download_audio():
     url = data['url']
     response = get(url, stream=True)
     resp = Response(response.raw)
-    resp.headers["Content-Disposition"] = f"attachment; filename={}.mp3"
-    .format(data['title'].replace(' ', '_'))
+    resp.headers["Content-Disposition"] = "attachment; filename={}.mp3"\
+        .format(data['title'].replace(' ', '_'))
     resp.headers['Content-Type'] = response.headers['Content-Type']
     resp.headers["Content-Length"] = response.headers["Content-Length"]
     resp.headers["Connection"] = response.headers["Connection"]
