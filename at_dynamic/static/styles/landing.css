@@ -38,85 +38,94 @@ header nav a {
   color: #484848;
   text-decoration: none;
 }
- .title {
-   font: 60px Georgia, serif;
-   text-align: left;
-   margin-left: -70px;
-   padding-top: 15px;
- }
  
 .home {
   width: 100%;
-  min-height: 680px;
   display: flex;
-  flex-flow: column;
+  flex-flow: column wrap;
   align-items: center;
+  padding: 20px;
   background-image: url('../images/back1.jpg');
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: 100% 100%;
   background-position-x: center;
   background-clip: padding-box;
   background-origin: border-box;
 }
 
-button {
-  padding: 12px;
+.home .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.home .logo img {
+  width: 12%;
+}
+.home .logo h3 {
+  font-size: 5.5vw;
+  text-align: center;
+  padding: 0 10px;
+  font-family: "Lucida Console", Courier, monospace;
+  font-weight: bold;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .home .logo img {
+  width: 10%;
+}
+}
+.home .title {
+  width: 90%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.home .title h1 {
+  font-family: Georgia, serif;
+  font-size: 10vw;
+  text-align: left;
+ }
+ .home .title h2 {
+   font-size: 6vw;
+   text-align: right;
+ }
+
+.home img.imag {
+  width: 80%;
+  padding: 0 20px 20px 20px;
+}
+.home button {
+  padding: 20px;
   border-radius: 30px;
   color: #484848;
-  width: 100px;
+  width: 150px;
   background-color: white;
   border: none;
   margin-top: 10px;
   outline: none;
 }
 
-.home .logo {
-  height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 600;
-  font-family: "Lucida Console", Courier, monospace;
-  color: black;
-  padding: 40px 8px 10px 0;
-}
-
-.home .logo h3 {
-  padding: 0  10px;
-}
-
-.tit {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: 100%;
-}
-
-.tit a {
+.home a {
   color: #484848;
   text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
 }
-
-.home img.imag {
-  height: auto;
-  min-height: 250px;
-  max-height: 350px;
-  width: auto;
-}
-
  .about {
    display: flex;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 10px;
   width: 100%;
-  min-height: 680px;
+  padding: 40px;
   background-image: url('../images/back.jpg');
   background-repeat: no-repeat;
-  background-size: auto 102%;
+  background-size: 100% 100%;
   background-position-x: center;
+  background-clip: padding-box;
+  background-origin: border-box;
 }
  .about h2 {
   font-size: 200%;
@@ -124,18 +133,22 @@ button {
 }
 
 .about img {
+  width: 80%;
   padding-top: 20px;
   border-bottom-right-radius: 100px;
   border: 1px solid white;
 }
-.about h3 {
+.about .cont {
+  width: 80%;
+}
+.about .cont h3 {
   padding-top: 30px;
+  font-size: 20px;
 }
 
-.about p {
+.about .cont p {
   padding-top: 15px;
-  width: 270px;
-  text-align: left;
+  font-size: 13px;
 }
 
 
@@ -149,7 +162,7 @@ button {
   min-height: 680px;
   background-image: url('../images/back1.jpg');
   background-repeat: no-repeat;
-  background-size: auto 102%;
+  background-size: 100% 100%;
   background-position-x: center;
   position: relative;
 }
@@ -234,10 +247,9 @@ button {
   flex-direction: column;
   padding-top: 10px;
   width: 100%;
-  min-height: 680px;
   background-image: url('../images/back.jpg');
   background-repeat: no-repeat;
-  background-size: auto 102%;
+  background-size: 100% 100%;
   background-position-x: center;
   position: relative;
 }
