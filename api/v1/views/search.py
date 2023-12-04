@@ -6,7 +6,7 @@ from youtubesearchpython import VideosSearch
 import json
 
 
-def search(query, max_result):
+def search(query, max_result, type_vid):
     """ Search youtube videos """
     yt = VideosSearch(query, 40)
     video_list = yt.result()['result']
@@ -16,14 +16,19 @@ def search(query, max_result):
     if len(video_list) < max_result:
         yt.next()
         video_list.extend(yt.result()['result'])
-    for i in range(len(video_list)):
-        video_list[i]['cname'] = video_list[i]['channel']['name']
-        video_list[i]['cimg'] = video_list[i]['channel']['thumbnails'][-1]['url']
-        del video_list[i]['channel']
-        video_list[i]['img'] = video_list[i]['thumbnails'][-1]['url']
-        del video_list[i]['thumbnails']
-        video_list[i]['views'] = video_list[i]['viewCount']['short']
-    return video_list
+    videos = []
+    for i in video_list:
+        i['cname'] = i['channel']['name']
+        i['cimg'] = i['channel']['thumbnails'][-1]['url']
+        del i['channel']
+        i['img'] = i['thumbnails'][-1]['url']
+        del i['thumbnails']
+        i['views'] = i['viewCount']['short']
+        if i['viewCount']['short'] and type_vid != 'search':
+            videos.append(i)
+        elif type_vid == 'search':
+            videos.append(i)
+    return videos
 
 
 @app_audio.route('/catagories/<int:catagory_id>/', methods=['GET'],
@@ -34,11 +39,11 @@ def catagories(catagory_id=None):
     books = 'كتاب | كتب | book | books'
     songs = "أغنية | أغاني | music | song"
     if catagory_id == 10:
-        vidList = search(songs, 50)
+        vidList = search(songs, 50, 'tag')
     elif catagory_id == 27:
-        vidList = search(books, 50)
+        vidList = search(books, 50, 'tag')
     elif catagory_id == 24:
-        vidList = search(podcast, 50)
+        vidList = search(podcast, 50, 'tag')
 
     return jsonify(vidList)
 
@@ -46,5 +51,5 @@ def catagories(catagory_id=None):
 @app_audio.route('/search/<quary>/', methods=['GET'], strict_slashes=False)
 def searchVid(quary):
     """ Search videos by key words """
-    search_list = search(quary, 50)
+    search_list = search(quary, 50, 'search')
     return jsonify(search_list)

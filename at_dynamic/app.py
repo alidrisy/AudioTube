@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ AudioTube main instance """
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, make_response
 from youtubesearchpython import VideosSearch
 from requests import get
 from os import getenv
@@ -39,19 +39,27 @@ def download_audio():
 @app.route('/', strict_slashes=False)
 def audioTube():
     """ Rendering the main app page """
-    video_list = search('اغنية | اغاني | music | song')
+    user_id = request.cookies.get('userId')
+    if not user_id:
+        resp = make_response(render_template('main.html'))
+        resp.set_cookie('userId', str(uuid.uuid4()))
+        return resp
+    video_list = search('اغنية | اغاني | music')
     video_list.extend(search('بودكاست | podcast'))
     video_list.extend(search('كتاب| كتب | book | books'))
-    for i in range(len(video_list)):
-        video_list[i]['cname'] = video_list[i]['channel']['name']
-        video_list[i]['cimg'] = video_list[i]['channel']['thumbnails'][-1]['url']
-        del video_list[i]['channel']
-        video_list[i]['img'] = video_list[i]['thumbnails'][-1]['url']
-        del video_list[i]['thumbnails']
-        video_list[i]['views'] = video_list[i]['viewCount']['short']
-#    video_list.sort(key=lambda k: k['views'])
-    video_list = json.dumps(video_list)
-    return render_template("AudioTube.html", videos=video_list)
+    videos = []
+    for i in video_list:
+        i['cname'] = i['channel']['name']
+        i['cimg'] = i['channel']['thumbnails'][-1]['url']
+        del i['channel']
+        i['img'] = i['thumbnails'][-1]['url']
+        del i['thumbnails']
+        i['views'] = i['viewCount']['short']
+        if i['viewCount']['short']:
+            videos.append(i)
+    videos.sort(key=lambda k: k['views'])
+    videos = json.dumps(videos)
+    return render_template("AudioTube.html", videos=videos)
 
 
 if __name__ == '__main__':

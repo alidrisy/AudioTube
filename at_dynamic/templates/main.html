@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="icon" href="../static//images/icon.png">
+    	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    	<link rel="stylesheet" href="../static/styles/landing.css">
+    <title>AudioTube</title>
+  </head>
+  <body>
+  <header id="header">
+    <nav>
+      <h3><a href="#" data-scroll="home">Home</a></h3>
+      <h3><a href="#" data-scroll="about">About</a></h3>
+      <h3><a href="#" data-scroll="usage">Usage</a></h3>
+      <h3><a href="#" data-scroll="connect">Connect</a></h3>
+    </nav>
+  </header>
+  <div class="home" id="home">
+    <div class="logo" >
+    <img src="../static/images/logo1.png" height="30"/>
+    <h3>AudioTube</h3>
+   </div>
+   <div class="img">
+     <img src="../static/images/listen.png" class="imag"/>
+   </div>
+  <div class="tit">
+  <h1 class="title">AudioTube</h1>
+  <h2>Your Gateway to Audio Bliss</h2>
+  <button><h3><a href="{{ url_for('audioTube') }}">Try it now</a></h3></button>
+  </div>
+   </div>
+    <div class="about" id="about">
+      <img src="../static/images/music.png"  height="350"/>
+      <h3>Stream YouTube Audio Like a Champ</h3>
+      <p>
+        <b>I used to watch YouTube videos just to listen to the audio</b> like music, podcasts, and audiobooks. But with the high cost and slow speed of the internet in my country, it was a pain in the neck and a waste of money. So AudioTube is here to save the day! This app lets you stream/download YouTube videos as audio directly, <b>without downloading the whole video.</b> Talk about saving internet data, storage space and works like a charm even with a weak internet connection.
+      </p>
+      </div>
+      <div class="catagories" id="usage">
+        <div class="main tag1" style="dispaly: block;">
+          <img src="../static/images/main.jpg" />
+          <div class="describe">
+              <h4>🎧  Enjoy YouTube Content Without the Video</h4><p>AudioTube is a revolutionary app that lets you experience YouTube content in a whole new way.</p>
+              </div>
+        </div>
+       <div class="main tag2" style="display: none;">
+        <img src="../static/images/play.jpg" />
+          <div class="describe">
+              <h4>🎧  Everything on YouTube, at your fingertips</h4><p>Access all the content you love, without the distractions by search for it.</p>
+              </div>
+        </div>
+        <div class="main tag3" style="display: none;">
+        <img src="../static/images/options.jpg" />
+          <div class="describe">
+              <h4>🎧  With a single tap.</h4><p>Just tap on the image container and you'll see the options for playing and downloading audios.</p>
+              </div>
+        </div>
+        <div class="main tag4" style="display: none;">
+        <img src="../static/images/search.jpg" />
+          <div class="describe">
+              <h4>🎧  No video, just audio.</h4><p>Stream your favorite music, podcasts, and audiobooks even on slow internet connections without wasting internet data or storage space.</p>
+              </div>
+        </div>
+        <div class="main tag5" style="display: none;">
+        <img src="../static/images/download.jpg" />
+          <div class="describe">
+              <h4>🎧 Say goodbye to YouTube buffering.</h4><p>Download YouTube videos as video or audio in the format and quality you want.</p>
+              </div>
+        </div>
+      <h3><li class="left"></li></h3>
+      <h3><li class="right hide"></li></h3>
+        <div class="circle">
+    <h3><li class="dot1"></li></h3>
+    <h3><li class="dot2"></li></h3>
+    <h3><li class="dot3"></li></h3>
+    <h3><li class="dot4"></li></h3>
+    <h3><li class="dot5"></li></h3>
+    </div>
+      </div>
+      
+      <div class="connect" id="connect">
+        <h2 style="margin-left: 10px;">Connect me</h2>
+        <div class="social">
+        <h3>SOCIAL MEDIA</h3>
+        <a href="https://www.facebook.com/abdulrahman.alidrisy?mibextid=ZbWKwL"><p>Facebook</p></a>
+        <a href="https://twitter.com/AbdulrahmanAdeb?t=M9I_jsKb7XohJY8_5Vft4Q&s=09"><p>Tweeter</p></a>
+        <a href="https://www.linkedin.com/in/abdulrahman-alidrisy-7940b8271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><p>LinkedIn</p></a>
+        </div>
+        <div class="social">
+        <h3>Others</h3>
+        <a href="a.alidrisy6@gmail.com"><p>Email</p></a>
+        <a href="https://github.com/alidrisy"><p>Githup Account</p></a>
+        <a href="https://github.com/alidrisy/AudioTube"><p>Source Code</p></a>
+        </div>
+      <footer>
+  <div>
+    <p>Copyright © 2023 Abdulrahman Alidrisy</p>
+    <p>All rights reserved.</p>
+  </div>
+</footer>
+</div>
+    <script>
+      $(document).ready(function(){
+       'use strict';
+       $('header nav a').click(function(e) {
+         e.preventDefault();
+         $('html, body').animate({
+           scrollTop: $('#' + $(this).data('scroll')).offset().top
+         }, 800);
+       });
+
+    let i = 1;
+   $('LI.left').click(function () {
+     if (i === 5) return;
+     $(this).fadeOut(100);
+     $(this).fadeIn(300);
+     $(`LI.dot${i}`).css('list-style', 'circle');
+     $(`DIV.tag${i}`).animate({opacity: 'hide', width: 'hide'}, 'slow');
+     i += 1;
+     $(`LI.dot${i}`).css('list-style', 'disc');
+     $(`DIV.tag${i}`).animate({opacity: 'show', width: 'show', dispaly: 'flex'}, 'slow');
+     $(`IMG.im${i - 1}`).fadeOut(400, function () {
+       $(`IMG.im${i}`).fadeIn(500);
+     });
+     
+   });
+   
+   $('LI.right').click(function () {
+     if (i === 1) return;
+     $(this).fadeOut(100);
+     $(this).fadeIn(200);
+     $(`LI.dot${i}`).css('list-style', 'circle');
+     $(`DIV.tag${i}`).animate({opacity: 'hide', width: 'hide'}, 'slow');
+     i -= 1;
+     $(`LI.dot${i}`).css('list-style', 'disc');
+     $(`DIV.tag${i}`).animate({opacity: 'show', width: 'show'}, 'slow');
+     $(`IMG.im${i + 1}`).fadeOut(400, function () {
+       $(`IMG.im${i}`).fadeIn(500);
+     });
+   });
+});
+    </script>
+    </body>
+</html>
