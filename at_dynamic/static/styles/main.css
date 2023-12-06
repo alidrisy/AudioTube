@@ -118,7 +118,7 @@ header {
 
  li.left {
  list-style: none;
- background-image: url('left.png');
+ background-image: url('../images/left.png');
  background-size: 15px;
  background-position: center;
  background-repeat: no-repeat;
@@ -130,7 +130,7 @@ header {
 
  li.right {
  list-style: none;
- background-image: url('right.png');
+ background-image: url('../images/right.png');
  background-size: 15px;
  background-position: center;
  background-repeat: no-repeat;

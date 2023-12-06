@@ -4,12 +4,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="../static/images/icon.png">
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<link rel="stylesheet" href="../static/styles/header.css">
-		<link rel="stylesheet" type="text/css" href="../static/styles/common.css">
-		<link rel="stylesheet" type="text/css" href="../static/styles/filter.css">
-		<link rel="stylesheet" type="text/css" href="../static/styles/videos.css">
+		<link rel="icon" href="../static/images/icon.png?{{ cache_id }}">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js?{{ cache_id }}"></script>
+		<link rel="stylesheet" href="../static/styles/header.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/common.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/filter.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/videos.css?{{ cache_id }}">
 		<title>AudioTube</title>
 	</head>
 	<body>
@@ -41,14 +41,14 @@
 					<input type="text" name="search" placeholder="Search AudioTube" class="input" value="" required>
 					<button type="submit" class="icon-button" ></button>
 				</form>
-				<img src="../static/images/search.png" class="ser" id="searchBtn" />
+				<img src="../static/images/search.png?{{ cache_id }}" class="ser" id="searchBtn" />
 			</section>
 			<section class="load">
-				<img src="../static/images/Rolling.gif" height=80/>
+				<img src="../static/images/Rolling.gif?{{ cache_id }}" height=80/>
 			</section>
 			<section class="videos">
 			</section>
 		</div>
-		<script src="../static/js/audioT.js"></script>
+		<script src="../static/js/audioT.js?{{ cache_id }}"></script>
 	</body>
 </html>

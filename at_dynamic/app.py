@@ -25,7 +25,7 @@ def download_audio():
     filename = filename.replace(' ', '_')
     filename = filename.encode('utf-8').decode('unicode-escape')
     response = get(url, stream=True)
-    resp = Response(response.raw)
+    resp = Response(response.iter_content(chunk_size=2048))
     resp.headers["Content-Disposition"] = f"attachment; filename={filename}"
     if "mp3" in filename:
         resp.headers['Content-Type'] = 'audio/mp3'
@@ -59,7 +59,7 @@ def audioTube():
             videos.append(i)
     videos.sort(key=lambda k: k['views'])
     videos = json.dumps(videos)
-    return render_template("AudioTube.html", videos=videos)
+    return render_template("AudioTube.html", videos=videos, cache_id=str(uuid.uuid4()))
 
 
 @app.route('/home')
