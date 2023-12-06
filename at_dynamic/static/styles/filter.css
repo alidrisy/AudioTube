@@ -7,13 +7,16 @@
 }
 
 .filter .tags ul {
-	width: 270px;
+	max-width: 270px;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	font-size: 12px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	overflow-y: scroll;
+	scrollbar-width: none;
 }
 
 .filter .tags li {
