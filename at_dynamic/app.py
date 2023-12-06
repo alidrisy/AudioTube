@@ -62,5 +62,11 @@ def audioTube():
     return render_template("AudioTube.html", videos=videos)
 
 
+@app.route('/home')
+def home():
+    """ Landing page """
+    return render_template("main.html")
+
+
 if __name__ == '__main__':
     app.run(host=getenv('AY_HOST', '0.0.0.0'), port=getenv('AY_PORT', 5000))

@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="../static/images/icon.png">
-
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link rel="stylesheet" href="../static/styles/header.css">
 		<link rel="stylesheet" type="text/css" href="../static/styles/common.css">
@@ -15,6 +14,17 @@
 	</head>
 	<body>
 		<header id="header">
+			    <nav class="navbar non">
+				<ul class="links">
+				  <li><a class="active">App</a></li>
+					<li><a href="{{ url_for('home') }}">Home</a></li>
+					<li><a href="{{ url_for('home') }}#about">About</a></li>
+					<li><a href="{{ url_for('home') }}#content">Content</a></li>
+					<li><a href="{{ url_for('home') }}#connect">Connect</a></li>
+				</ul>
+			</nav>
+			<button class="menu">
+			</button>
 		</header>
 		<div class="container">
 			<section class="filter">

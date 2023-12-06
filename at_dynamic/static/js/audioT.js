@@ -124,4 +124,7 @@ $(document).ready(function () {
       $('SECTION.videos').append(`<div class="video"><div class="play" id="v${video.id}" v-id="${video.id}"><img src="${video.img}" /><p class="time">${video.duration}</p><h3>${video.title}</h3></div><i class="ex" id="v${video.id}"></i><div class="player" id="v${video.id}r"  v-id="${video.id}"></div><div class="detail"><div class="channel"><img src="${video.cimg}" /><p>${video.cname}</p></div><div class="info"><p class="views">${video.views}</p><p class="date">${video.publishedTime}</p></div></div></div>`);
     }
   }
+  $('button.menu').click(function () {
+    $('nav.navbar').toggleClass('non');
+  });
 });
