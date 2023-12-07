@@ -48,8 +48,8 @@
   cursor: pointer;
 }
 
-.videos .video .play:hover,
-.videos .video .play:focus {
+.videos .video .play:hover {
+   outline-color: transparent;
 }
 
 .videos .video h3 {
@@ -95,7 +95,7 @@
   cursor: pointer;
 }
 
-.videos .video .player .op-play:hover, .videos .video .player .op-play:focus,  .videos .video .player .op-download:hover, .videos .video .player .op-download:focus, .videos .video .player .op-audio:hover, .videos .video .player .op-audio:focus,.videos .video .player .op-video:hover, .videos .video .player .op-video:focus, .videos .video .player .quality:hover, .videos .video .player .quality:focus {
+.videos .video .player .op-play:hover,  .videos .video .player .op-download:hover, .videos .video .player .op-audio:hover, .videos .video .player .op-video:hover, .videos .video .player .quality:hover {
   background-color: #e5e5e5;
 }
 

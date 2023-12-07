@@ -32,9 +32,9 @@
 	cursor: pointer;
 }
 
-.filter .tags li:hover,
-.filter .tags li:focus {
+.filter .tags li:hover {
 	background-color: #d4d4d4;
+	outline-color: transparent;
 }
 
 .filter .tags .def {
@@ -54,12 +54,12 @@
 	outline: none;
 }
 
-.filter .ser:hover,
-.filter .ser:focus {
+.filter .ser:hover {
 	background-color: #d4d4d4;
 	border: 5px solid #d4d4d4;
 	border-radius: 50%;
 	outline: none;
+	outline-color: transparent;
 }
 
 .filter .search .icon-button {
@@ -80,6 +80,7 @@
 .filter .search .icon-button:hover,
 .filter .search .icon-button:focus {
 	background-color: #d1d5db;
+	outline-color: transparent;
 }
   
 .filter .search {
@@ -100,6 +101,7 @@
 	outline: none;
 	border: 1px solid #d4d4d4;
 	color: #484848;
+	outline-color: transparent;
 }
 
 .filter div.exit {
