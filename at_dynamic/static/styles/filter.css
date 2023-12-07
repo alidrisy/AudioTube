@@ -34,7 +34,8 @@
 
 .filter .tags li:hover {
 	background-color: #d4d4d4;
-	outline-color: transparent;
+	outline-color: none;
+	outline: none;
 }
 
 .filter .tags .def {
@@ -59,7 +60,7 @@
 	border: 5px solid #d4d4d4;
 	border-radius: 50%;
 	outline: none;
-	outline-color: transparent;
+	outline-color: none;
 }
 
 .filter .search .icon-button {
@@ -77,10 +78,9 @@
 	outline: none;
 }
 
-.filter .search .icon-button:hover,
-.filter .search .icon-button:focus {
+.filter .search .icon-button:hover {
 	background-color: #d1d5db;
-	outline-color: transparent;
+	outline-color: none;
 }
   
 .filter .search {

@@ -49,7 +49,8 @@
 }
 
 .videos .video .play:hover {
-   outline-color: transparent;
+   outline-color: none;
+   outline: none;
 }
 
 .videos .video h3 {
@@ -93,6 +94,7 @@
   border: 1px solid white;
   border-radius: 20px;
   cursor: pointer;
+  outline: none;
 }
 
 .videos .video .player .op-play:hover,  .videos .video .player .op-download:hover, .videos .video .player .op-audio:hover, .videos .video .player .op-video:hover, .videos .video .player .quality:hover {
