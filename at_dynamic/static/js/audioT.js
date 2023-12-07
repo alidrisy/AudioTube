@@ -107,7 +107,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.op-audio', function () {
-    $.get(`https//aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
+    $.get(`https://aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
         const aud = data.aformats[0];
         $(`.video DIV#${$(this).attr('id')}r`).empty();
