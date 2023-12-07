@@ -29,6 +29,12 @@
 	text-align: center;
 	border: 1px solid #CCCCCC;
 	border-radius: 20px;
+	cursor: pointer;
+}
+
+.filter .tags li:hover,
+.filter .tags li:focus {
+	background-color: #d4d4d4;
 }
 
 .filter .tags .def {
@@ -48,7 +54,8 @@
 	outline: none;
 }
 
-.filter .ser:hover {
+.filter .ser:hover,
+.filter .ser:focus {
 	background-color: #d4d4d4;
 	border: 5px solid #d4d4d4;
 	border-radius: 50%;
@@ -70,7 +77,8 @@
 	outline: none;
 }
 
-.filter .search .icon-button:hover {
+.filter .search .icon-button:hover,
+.filter .search .icon-button:focus {
 	background-color: #d1d5db;
 }
   

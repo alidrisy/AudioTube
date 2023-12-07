@@ -45,9 +45,12 @@
 
 
 .videos .video .play {
-  min-height: 200px;
+  cursor: pointer;
 }
 
+.videos .video .play:hover,
+.videos .video .play:focus {
+}
 
 .videos .video h3 {
   color: #484848;
@@ -89,9 +92,10 @@
   padding: 10px;
   border: 1px solid white;
   border-radius: 20px;
+  cursor: pointer;
 }
 
-.videos .video .player .op-play:hover,  .videos .video .player .op-download:hover, .videos .video .player .op-audio:hover,.videos .video .player .op-video:hover, .videos .video .player .quality:hover {
+.videos .video .player .op-play:hover, .videos .video .player .op-play:focus,  .videos .video .player .op-download:hover, .videos .video .player .op-download:focus, .videos .video .player .op-audio:hover, .videos .video .player .op-audio:focus,.videos .video .player .op-video:hover, .videos .video .player .op-video:focus, .videos .video .player .quality:hover, .videos .video .player .quality:focus {
   background-color: #e5e5e5;
 }
 

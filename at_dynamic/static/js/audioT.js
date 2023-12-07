@@ -30,7 +30,7 @@ $(document).ready(function () {
       const vid = JSON.parse($(this).attr('data'));
       videos(vid);
     } else {
-      $.get(`http://127.0.0.1:5001/api/v1/catagories/${$(this).attr('id')}`, (data, textStatus) => {
+      $.get(`https://aalidrisy.tech/api/v1/catagories/${$(this).attr('id')}`, (data, textStatus) => {
         if (textStatus === 'success') {
           $('.tags LI.def').attr('data', JSON.stringify(data));
           videos(data);
@@ -43,7 +43,7 @@ $(document).ready(function () {
     $('SECTION.videos').empty();
     $('.exit').show();
     $('.load').show();
-    $.get(`http://127.0.0.1:5001/api/v1/search/${$('.input').val()}`, (data, textStatus) => {
+    $.get(`https://aalidrisy.tech/api/v1/search/${$('.input').val()}`, (data, textStatus) => {
       if (textStatus === 'success') {
         videos(data);
       }
@@ -71,7 +71,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.op-play', function () {
-    $.get(`http://127.0.0.1:5001/api/v1/audios/${$(this).attr('v-id')}`, (data, textStatus) => {
+    $.get(`https://aalidrisy.tech/api/v1/audios/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
         $('.video DIV.player').removeClass('brd');
         $('.ex').hide();
@@ -89,7 +89,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.op-video', function () {
-    $.get(`http://127.0.0.1:5001/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
+    $.get(`https://aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
         $(`.video DIV#${$(this).attr('id')}r`).empty();
         for (const vid of data.vformats) {
@@ -107,7 +107,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.op-audio', function () {
-    $.get(`http://127.0.0.1:5001/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
+    $.get(`https//aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
         const aud = data.aformats[0];
         $(`.video DIV#${$(this).attr('id')}r`).empty();
