@@ -73,28 +73,32 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 120vw;
+  height: 130vw;
   width: 70vw;
+  max-height: 620px;
+  max-width: 340px;
   background-color: white;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
 .catagories .main img {
-  height: 80vw;
-  width: auto;
+  width: 45vw;
+  max-width: 260px;
   border-top-right-radius: 20px;
 }
 
 .catagories .main  p {
   padding-top: 7px;
-  font-size: 3vw;
+  font-size: 13px;
   width: 60vw;
+  max-width: 280px;
   padding-left: 8px;
 }
 .catagories .main h4 {
-  font-size: 4vw;
+  font-size: 16px;
   width: 60vw;
+  max-width: 290px;
 }
 
 .catagories .circle {
@@ -162,7 +166,7 @@ li.right {
 }
 .connect .social a {
   font-family: system-ui;
-  font-size: 3vw;
+  font-size: 16px;
   color: #484848;
   text-decoration: none;
 }
