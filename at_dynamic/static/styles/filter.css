@@ -95,8 +95,8 @@
 
 .filter .search .input {
 	height: 40px;
-	min-width: 300px;
-	max-width: 700px;
+	min-width: 230px;
+	max-width: 800px;
 	padding-left: 10px;
   	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -132,7 +132,7 @@
 	.filter .search .input {
 		width: 240px;
 	}
-	.popover::-webkit-scrollbar{
+	.tags ul::-webkit-scrollbar {
 		width: 0px;
 	}
 }
