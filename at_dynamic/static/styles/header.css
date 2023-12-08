@@ -65,17 +65,19 @@ button.menu {
  button.menu {
    display: block;
    background: Transparent;
-   border: none;
+   padding: 5px;
+   border: 1px solid white;
+   border-radius: 5px;
    text-align: center;
    height: 40px;
-   width: 40px;
+   width: 50px;
    background-image: url("../images/menu.png");
-   background-size: 32px;
+   background-size: 25px;
    background-repeat: no-repeat;
-   background-position: center center;
+   background-position: center 10px;
    position: absolute;
    right: 10px;
-   top: 14px;
+   top: 10px;
    outline: none;
  }
 }

@@ -37,7 +37,7 @@
           <a class="nav-link" aria-current="page" href="#content">Content</a>
         </li>
         <li class="nav-item p-lg-3">
-          <a class="nav-link" aria-current="page" href="#connect">Connect me</a>
+          <a class="nav-link" aria-current="page" href="#connect">Connect</a>
         </li>
       </ul>
     </div>
@@ -46,13 +46,13 @@
     </header>
     <div class="landing d-flex flex-column justify-content-center" id="home">
       <div class="home text-center p-4">
-            <img src="../static/images/listen.png" width="60%" class="img-fluid"/>
+            <img src="../static/images/listen.png" width="380vw" class="img-fluid"/>
       <h1 class="mt-4">AudioTube</h1>
       <h3 class="fs-5 mb-4">Your Gateway to Audio Bliss</h3>
       <a class="btn rounded-pill btn-primary main-btn" href="{{ url_for('audioTube') }}">Try it now</a>
       </div>
       <div class="about text-center p-4" id="about">
-            <img src="../static/images/music.png" width="60%" class="img-fluid pt-4 mt-4"/>
+            <img src="../static/images/music.png" width="380vw" class="img-fluid pt-4 mt-4"/>
             <h3 class="fs-5 mt-4">Stream YouTube Audio Like a Champ</h3>
       <p class="fs-7 w-auto text-wrap">
         <b>I used to watch YouTube videos just to listen to the audio</b> like music, podcasts, and audiobooks. But with the high cost and slow speed of the internet in my country, it was a pain in the neck and a waste of money. So AudioTube is here to save the day! This app lets you stream/download YouTube videos as audio directly, <b>without downloading the whole video.</b> Talk about saving internet data, storage space and works like a charm even with a weak internet connection.
@@ -68,7 +68,7 @@
        <div class="main tag2" style="display: none;">
         <img src="../static/images/play.jpg" />
           <div class="describe">
-              <h4>🎧  Everything on YouTube, at your fingertips</h4><p>Access all the content you love, without the distractions by search for it.</p>
+              <h4>🎧  Everything on YouTube, at your fingertips</h4><p>Access all the content you love, without the distractions only by search for it.</p>
               </div>
         </div>
         <div class="main tag3" style="display: none;">
@@ -138,7 +138,6 @@
      $(`IMG.im${i - 1}`).fadeOut(400, function () {
        $(`IMG.im${i}`).fadeIn(500);
      });
-     
    });
    
    $('LI.right').click(function () {

@@ -54,13 +54,13 @@ header {
 
 
 .catagories {
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 10px;
+  padding: 6px 0;
   width: 100%;
-  min-height: 680px;
+  height: 160vw;
   background-image: linear-gradient(160deg, #FFE4C4 -5%,#FDF5E6 -100%, #8fd3f4 75%, #135CA3  120%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -73,35 +73,34 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 470px;
-  width: 300px;
+  height: 120vw;
+  width: 70vw;
   background-color: white;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
-  font-size: 12px;
 }
-.catagories .tag1, .tag3 .tag4, .tag5 {
-  
-}
+
 .catagories .main img {
-  height: 320px;
+  height: 80vw;
+  width: auto;
   border-top-right-radius: 20px;
 }
 
 .catagories .main  p {
   padding-top: 7px;
-  width: 260px;
-  padding-left: 10px;
+  font-size: 3vw;
+  width: 60vw;
+  padding-left: 8px;
 }
 .catagories .main h4 {
-  font-size: 13px;
-  width: 280px;
+  font-size: 4vw;
+  width: 60vw;
 }
 
 .catagories .circle {
   display: flex;
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
 }
 
 .circle li {
@@ -128,7 +127,7 @@ header {
  right: 10px;
 }
 
- li.right {
+li.right {
  list-style: none;
  background-image: url('../images/right.png');
  background-size: 15px;
@@ -163,12 +162,12 @@ header {
 }
 .connect .social a {
   font-family: system-ui;
-  font-size: 15px;
+  font-size: 3vw;
   color: #484848;
   text-decoration: none;
 }
 .connect .social p {
-  padding-top: 12px;
+  padding-top: 5px;
   padding-left: 10px;
 }
 
@@ -177,6 +176,4 @@ footer {
   position: absolute;
   bottom: 0px;
   text-align: center;
-  background-size: auto;
-  background-repeat: no-repeat;
 }

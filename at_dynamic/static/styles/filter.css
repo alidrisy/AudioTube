@@ -21,7 +21,10 @@
 		overflow-y: hidden;
         overflow-x: scroll;
         scrollbar-width: none;
-}
+  }
+  .tags ul::-webkit-scrollbar{
+     width: 0px;
+ }
 }
 
 .filter .tags li {
@@ -117,4 +120,19 @@
 	outline: none;
 	margin-right: 20px;
 	display: none;
+}
+
+@media screen and (max-width: 350px) {
+	.filter .tags ul {
+	  max-width: 250px;
+	  overflow-y: hidden;
+          overflow-x: scroll;
+          scrollbar-width: none;
+	}
+	.filter .search .input {
+		width: 240px;
+	}
+	.popover::-webkit-scrollbar{
+		width: 0px;
+	}
 }

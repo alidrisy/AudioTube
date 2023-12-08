@@ -156,3 +156,64 @@
   border-radius: 20px;
   text-align: center;
 }
+
+@media screen and (max-width: 400px) {
+  .videos .video p.time {
+    top: 143px;
+    padding: 3px;
+    left: 9%;
+    font-size: 12px;
+  }
+  .videos .video h3 {
+    font-size: 13px;
+  }
+  .videos .video .player .op-play,  .videos .video .player .op-download, .videos .video .player .op-audio,.videos .video .player .op-video, .videos .video .player .quality {
+    width: 80px;
+    padding: 8px;
+    font-size: 13px;
+  }
+  .videos .video .detail .channel img {
+    width: 60px;
+    height: 60px;
+  }
+  .videos .video .detail .channel p {
+    font-size: 13px;
+  }
+  .videos .video .detail .info .views,
+  .videos .video .detail .info .date {
+    font-size: 11px;
+  }
+  .videos .video .player audio {
+    width: 260px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .videos .video p.time {
+    top: 113px;
+    padding: 2px;
+    left: 10%;
+    font-size: 12px;
+  }
+  .videos .video h3 {
+    font-size: 12px;
+  }
+  .videos .video .player .op-play,  .videos .video .player .op-download, .videos .video .player .op-audio,.videos .video .player .op-video, .videos .video .player .quality {
+    width: 75px;
+    padding: 7px;
+    font-size: 11px;
+  }
+  .videos .video .detail .channel img {
+    width: 55px;
+    height: 55px;
+  }
+  .videos .video .detail .channel p {
+    font-size: 12px;
+  }
+  .videos .video .detail .info .views,
+  .videos .video .detail .info .date {
+    font-size: 10px;
+  }
+  .videos .video .player audio {
+    width: 200px;
+  }
+}
