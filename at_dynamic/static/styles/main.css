@@ -61,6 +61,7 @@ header {
   padding: 6px 0;
   width: 100%;
   height: 160vw;
+  max-height: 800px;
   background-image: linear-gradient(160deg, #FFE4C4 -5%,#FDF5E6 -100%, #8fd3f4 75%, #135CA3  120%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
