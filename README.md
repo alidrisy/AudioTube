@@ -42,6 +42,12 @@ python3 -m at_dynamic.app
   
 ![usage](/app_images/usage.png)
 
+
+## Licensing
+AudioTube application is licensed under the terms of the MIT License and is available for free usage.
+* Copyright © 2023 Abdulrahman Alidrisy
+   - All rights reserved.
+  
 ## Bugs
 No known bugs at this time.
 
