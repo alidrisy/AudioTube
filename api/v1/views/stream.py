@@ -6,7 +6,7 @@ from flask import make_response, jsonify, abort
 
 
 @app_audio.route('/audios/<video_id>/', methods=['GET'], strict_slashes=False)
-def get_audio(video_id):
+def get_audio(video_ id):
     """ Get audio from youtube video """
     options = {
             'format': "bestaudio/best",
@@ -14,6 +14,7 @@ def get_audio(video_id):
             }
     audio = {}
     with YoutubeDL(options) as yt:
+        # extract info without download
         info = yt.extract_info(video_id, download=False)
         inf = info['formats'][0]
         if 'audio' in inf['format'] and inf['ext'] == 'webm':
@@ -25,7 +26,7 @@ def get_audio(video_id):
 
 @app_audio.route('/formats/<video_id>/', methods=['GET'], strict_slashes=False)
 def download_info(video_id):
-    """ Get youtube video info and url"""
+    """ Get youtube video/audio info and url"""
     video = {}
     with YoutubeDL({'quiet': True}) as yt:
         info = yt.extract_info(video_id, download=False)

@@ -23,9 +23,12 @@ def download_audio():
     url = request.form.get('url')
     filename = request.form.get('filename')
     filename = filename.replace(' ', '_')
+    # covert filename to valid latin-1
     filename = filename.encode('utf-8').decode('unicode-escape')
+    # fetch audio or video as stream without downloud it
     response = get(url, stream=True)
-    resp = Response(response.iter_content(chunk_size=2048))
+    # return a fetched data as raw or chunks
+    resp = Response(response.raw)
     resp.headers["Content-Disposition"] = f"attachment; filename={filename}"
     if "mp3" in filename:
         resp.headers['Content-Type'] = 'audio/mp3'
@@ -39,15 +42,20 @@ def download_audio():
 @app.route('/', strict_slashes=False)
 def audioTube():
     """ Rendering the main app page """
+    # git user id cookie to insure if the user use the app for the fris time
     user_id = request.cookies.get('userId')
+    # if there is no user id cookie (the user use the app for the first time)
+    # set a user id cookie and render the home page 
     if not user_id:
-        resp = make_response(render_template('main.html'))
-        resp.set_cookie('userId', str(uuid.uuid4()))
-        return resp
+        response = make_response(render_template('main.html'))
+        response.set_cookie('userId', str(uuid.uuid4()))
+        return response
+    # if the user did not use it for the first time render the AudioTube page
     video_list = search('اغنية | اغاني | music')
     video_list.extend(search('بودكاست | podcast'))
     video_list.extend(search('كتاب| كتب | book | books'))
     videos = []
+    # reduce the data length (take the needed  data)
     for i in video_list:
         i['cname'] = i['channel']['name']
         i['cimg'] = i['channel']['thumbnails'][-1]['url']
@@ -64,7 +72,7 @@ def audioTube():
 
 @app.route('/home')
 def home():
-    """ Landing page """
+    """ Landing page (the home page) """
     return render_template("main.html")
 
 

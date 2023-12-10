@@ -1,8 +1,10 @@
+// AudioTube jQuery dynamic functions
 $(document).ready(function () {
+  // git the data that render by flask
   let listV = $('.tags LI.def').attr('data');
   listV = JSON.parse(listV);
   videos(listV);
-
+  // display the search field when click on the search icon
   $('#searchBtn').click(function () {
     $('.search').css('display', 'flex');
     $('.search').focus();
@@ -13,7 +15,8 @@ $(document).ready(function () {
   $('#searchInput').blur(function () {
     $(this).hide();
   });
-
+  // hide the serach field when click outside the filter section if the input
+  // field empty
   $(document).click(function (event) {
     if (!$(event.target).closest('.filter').length && !$('input').val()) {
       $('.filter .search').hide();
@@ -21,6 +24,7 @@ $(document).ready(function () {
       $('.tags').show();
     }
   });
+  // change content based on the catagory selected
   $('.tags LI').on('click', function () {
     $('LI').removeClass('def');
     $(this).addClass('def');
@@ -38,6 +42,7 @@ $(document).ready(function () {
       });
     }
   });
+  // handel the search event
   $('.search').on('submit', function (e) {
     e.preventDefault();
     $('SECTION.videos').empty();
@@ -49,7 +54,7 @@ $(document).ready(function () {
       }
     });
   });
-
+  // exit search and gobacke to the main page
   $('.exit').on('click', function (event) {
     $('.filter .search').hide();
     $('.exit').hide();
@@ -61,7 +66,7 @@ $(document).ready(function () {
     listv = JSON.parse(listv);
     videos(listv);
   });
-
+  // dispaly play and downloud options
   $(document).on('click', 'DIV.play', function () {
     if (!$(`.video DIV#${$(this).attr('id')}r`).text()) {
       $(`I#${$(this).attr('id')}`).show();
@@ -69,7 +74,7 @@ $(document).ready(function () {
       $(`.video DIV#${$(this).attr('id')}r`).append(`<div class="op-play" id="${$(this).attr('id')}" v-id="${$(this).attr('v-id')}">Play</div><div class="op-download" id="${$(this).attr('id')}" v-id="${$(this).attr('v-id')}">Download</div>`);
     }
   });
-
+  // play audio
   $(document).on('click', '.op-play', function () {
     $.get(`https://aalidrisy.tech/api/v1/audios/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
@@ -82,12 +87,12 @@ $(document).ready(function () {
       }
     });
   });
-
+  // display downloud options as video or audio
   $(document).on('click', '.op-download', function () {
     $(`.video DIV#${$(this).attr('id')}r`).empty();
     $(`.video DIV#${$(this).attr('id')}r`).append(`<div class="op-audio" id="${$(this).attr('id')}" v-id="${$(this).attr('v-id')}">Audio</div><div class="op-video" id="${$(this).attr('id')}" v-id="${$(this).attr('v-id')}">Video</div>`);
   });
-
+  // display quality options to downloud videos
   $(document).on('click', '.op-video', function () {
     $.get(`https://aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
@@ -99,13 +104,13 @@ $(document).ready(function () {
       }
     });
   });
-
+  // cleare the play/downloud contener
   $(document).on('click', '.ex', function () {
     $(`.video DIV#${$(this).attr('id')}r`).empty();
     $(`.video DIV#${$(this).attr('id')}r`).removeClass('brd');
     $(`I#${$(this).attr('id')}`).hide();
   });
-
+  // display the downloud formats for audio
   $(document).on('click', '.op-audio', function () {
     $.get(`https://aalidrisy.tech/api/v1/formats/${$(this).attr('v-id')}`, (data, textStatus) => {
       if (textStatus === 'success') {
@@ -117,7 +122,7 @@ $(document).ready(function () {
       }
     });
   });
-
+  // display videos
   function videos (vidList) {
     $('.load').hide();
     for (const video of vidList) {
