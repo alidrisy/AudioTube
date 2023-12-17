@@ -6,7 +6,7 @@ from flask import make_response, jsonify, abort
 
 
 @app_audio.route('/audios/<video_id>/', methods=['GET'], strict_slashes=False)
-def get_audio(video_ id):
+def get_audio(video_id):
     """ Get audio from youtube video """
     options = {
             'format': "bestaudio/best",
