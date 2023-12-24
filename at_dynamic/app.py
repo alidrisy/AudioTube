@@ -28,7 +28,7 @@ def download_audio():
     # fetch audio or video as stream without downloud it
     response = get(url, stream=True)
     # return a fetched data as raw or chunks
-    resp = Response(response.raw)
+    resp = Response(response.iter_content(chunk_size=1024))
     resp.headers["Content-Disposition"] = f"attachment; filename={filename}"
     if "mp3" in filename:
         resp.headers['Content-Type'] = 'audio/mp3'
@@ -77,4 +77,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run(host=getenv('AY_HOST', '0.0.0.0'), port=getenv('AY_PORT', 5000))
+    app.run(host=getenv('AY_HOST', '0.0.0.0'), port=getenv('AY_PORT', 5000), debug=True)
